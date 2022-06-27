@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "yoobic-project": {
+      "hosting": {
+        "app": [
+          "yoobic-project"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "yoobic-project"
+  }
+}
