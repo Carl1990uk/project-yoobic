@@ -1,20 +1,54 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+
+
+<ion-content>
+
+  <ion-tabs>
+    <ion-header>
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-buttons slot="start">
+        <ion-menu-button item-start class="menu" menu="main-menu"></ion-menu-button>
+      </ion-buttons>
+      
+        
+      
     </ion-toolbar>
   </ion-header>
+  <ion-tab-bar slot="top">
+    <ion-tab-button tab="tab1">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+        <ion-label>Missions</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="tab2">
+
+        <ion-label>Notes</ion-label>
+      </ion-tab-button>
+      
+      <ion-tab-button tab="tab3">
+
+        <ion-label>Request</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  
+ <!-- -Movies -->
+  <ion-card class="divit" button *ngFor="let item of movies" [routerLink]="[item.id]">
+  <ion-card-header>
+    <ion-avatar>
+    <ion-img src="{{imageBaseUrl + item?.poster_path}}"></ion-img>
+    </ion-avatar>
+    <ion-card-subtitle>Year of release: {{item.release_date| date:'y'}}
+      <ion-badge>{{item.vote_average}}</ion-badge>
+    </ion-card-subtitle>
+    <ion-card-title>{{item.title}}</ion-card-title>
+  </ion-card-header>
+</ion-card>
+  <ion-infinite-scroll  (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content 
+      loadingSpinner="bubbles" 
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  
 </ion-content>
