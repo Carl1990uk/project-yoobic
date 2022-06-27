@@ -1,0 +1,46 @@
+ion-content{
+     --padding-top: 20%;
+    // --padding-start: 10%;
+    // --padding-end: 10%;
+    --ion-background-color: #bfc6dd;
+}
+.circle{
+    height: 10vh;
+    width: 10vh;
+    background-color: black;
+    border-radius: 50%;
+
+}
+.button-signup{
+    padding-left: 5%;
+}
+.button-signin{
+    padding-right: 5%;
+}
+.forgot-password{
+    font-size: 1.5vh;
+    
+}
+.signing-in{
+    width: 100% !important;
+    height: auto;
+   
+    text-align: center;
+    font-size: 10px;
+}
+.f-icon{
+   
+    font-weight: bold;
+    text-align: center;
+    font-size: large;
+}
+.sign-in{
+    margin-top: 40px;
+    padding-bottom: 30px;
+}
+.input{
+    background-color: white;
+}
+.input-img{
+    padding-right: 10px;
+}

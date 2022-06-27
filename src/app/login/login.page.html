@@ -1,9 +1,50 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+<ion-content class="login-Content" [fullscreen]="true">
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="3">
+        <div class="circle" size="3"></div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="3">
+        <div class="sign-in" size="3">Sign In</div>
+      </ion-col>
+    </ion-row>
+    <form class="form" [formGroup]="credentials" (ngSubmit)="login()">
+      <ion-item class="input">
+        <ion-input  class="input"type="email" placeholder="Email" formControlName="email">
+          <ion-icon class="input-img" name="image-outline" slot="start"></ion-icon>
+        </ion-input>
+        <ion-note slot="error" *ngIf="(email.dirty || email.touched) && email.errors">Email is invalid</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-input class="input" type="password" placeholder="Password" formControlName="password">
+          <ion-icon class="input-img" name="image-outline" slot="start"></ion-icon>
+        </ion-input>
+        <ion-note slot="error" *ngIf="(password.dirty || password.touched) && password.errors">Password is invalid</ion-note>
+      </ion-item>
+      <ion-row class="ion-justify-content-end">
+        <ion-col size="3">
+          <div class="forgot-password" >forgot password?</div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="3">
+          <div class="signing-in" >sign in with:</div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="3">
+          <div class="f-icon" size="2" >f</div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-between buttons">
+        <ion-button type="button" color="light" class="button-signup" (click)="register()" shape="round" color="light">Sign Up</ion-button>
+        <ion-button type="submit" color="dark" class="button-signin" [disabled]="!credentials.valid"shape="round" color="dark">Sign in</ion-button>
+      </ion-row>
+     
+    </form>
+  </ion-grid>
+  
+  </ion-content>
+  

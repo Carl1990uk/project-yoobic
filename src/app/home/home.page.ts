@@ -1,6 +1,6 @@
 import { environment } from '../../environments/environment';
 import { MovieService } from './../service/movie.service';
-import {  InfiniteScrollCustomEvent,LoadingController } from '@ionic/angular';
+import { InfiniteScrollCustomEvent,LoadingController } from '@ionic/angular';
 import { Component} from '@angular/core';
 
 

@@ -9,5 +9,8 @@ export const environment = {
     messagingSenderId: '1077389455943',
     measurementId: 'G-9ZPP28JTQR',
   },
-  production: true
+  production: true,
+  images: 'https:/image.tmbd.org/t/p/',
+  apiKey:'66440df98e262a2e67dc69b4a80ac857',
+  baseURL: 'https://api.themoviedb.org/3/',
 };

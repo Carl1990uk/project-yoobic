@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import{ redirectUnauthorizedTo, redirectLoggedInTo, canActivate,} from '@angular/fire/auth-guard';
-import { identity } from 'rxjs';
+
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['']);
 const redirectLoggedInToHome = () => redirectLoggedInTo(['home']);
@@ -19,7 +19,6 @@ const routes: Routes = [
       import('./home/home.module').then( m => m.HomePageModule),
       //if not logged in: you will be sent to login page
     ...canActivate(redirectUnauthorizedToLogin)
-    
   },
   {
     path: 'home/:id',
